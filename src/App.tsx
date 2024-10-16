@@ -19,7 +19,7 @@ import SalesByCategory from './components/SalesByCategory';
 import SalesOverTime from './components/SalesOverTime';
 import PriceComparison from './components/PriceComparison';
 import TopStock from './components/TopStock';
-import SalesByStyleOverTime from './components/SalesByStyleOverTime';
+import SalesQtyOverTime from './components/SalesQtyOverTime';
 import PriceOriginalVsFinal from './components/PriceOriginalVsFinal';
 import SalesB2B from './components/SalesB2B';
 import SalesHeatmap from './components/SalesHeatmap';
@@ -36,7 +36,7 @@ const App: React.FC = () => {
             <li><Link to="/sales-over-time">3.Vendas ao Longo do Tempo</Link></li>
             <li><Link to="/price-comparison">4.Comparação de Preços MRP</Link></li>
             <li><Link to="/top-stock">5.Produtos com Maior Estoque</Link></li>
-            <li><Link to="/sales-by-style-over-time">6.Vendas por Estilo ao Longo do Tempo</Link></li>
+            <li><Link to="/sales-qty-over-time">6.Vendas por Estilo ao Longo do Tempo</Link></li>
             <li><Link to="/price-original-vs-final">7.Preço Original vs Final</Link></li>
             <li><Link to="/sales-b2b">8.Vendas B2B vs Outros Canais</Link></li>
             <li><Link to="/sales-heatmap">9.Mapa de Calor de Vendas</Link></li>
@@ -50,7 +50,7 @@ const App: React.FC = () => {
           <Route path="/sales-over-time" element={<SalesOverTime />} />
           <Route path="/price-comparison" element={<PriceComparison />} />
           <Route path="/top-stock" element={<TopStock />} />
-          <Route path="/sales-by-style-over-time" element={<SalesByStyleOverTime />} />
+          <Route path="/sales-qty-over-time" element={<SalesQtyOverTime />} />
           <Route path="/price-original-vs-final" element={<PriceOriginalVsFinal />} />
           <Route path="/sales-b2b" element={<SalesB2B />} />
           <Route path="/sales-heatmap" element={<SalesHeatmap />} />
