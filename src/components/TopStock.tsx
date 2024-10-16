@@ -10,15 +10,15 @@ const TopStock = () => {
       .then(data => setData(data));
   }, []);
 
-  const sku = data.map(item => item['SKU']);
-  const stock = data.map(item => item['Stock']);
+  const Categoria = data.map(item => item['Categoria']);
+  const Estoque = data.map(item => item['Estoque']);
 
   return (
     <Plot
       data={[
         {
-          x: sku,
-          y: stock,
+          x: Categoria,
+          y: Estoque,
           type: 'bar',
           marker: { color: 'orange' },
         },

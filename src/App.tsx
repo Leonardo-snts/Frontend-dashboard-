@@ -18,7 +18,6 @@ import AmazonSalesByState from './components/AmazonSalesByState';
 import SalesByCategory from './components/SalesByCategory';
 import SalesOverTime from './components/SalesOverTime';
 import PriceComparison from './components/PriceComparison';
-import WeightVsQty from './components/WeightVsQty';
 import TopStock from './components/TopStock';
 import SalesByStyleOverTime from './components/SalesByStyleOverTime';
 import PriceOriginalVsFinal from './components/PriceOriginalVsFinal';
@@ -32,17 +31,16 @@ const App: React.FC = () => {
       <div>
         <nav>
           <ul>
-            <li><Link to="/amazon-sales-by-state">Vendas por Estado (Amazon)</Link></li>
-            <li><Link to="/sales-by-category">Distribuição de Vendas por Categoria</Link></li>
-            <li><Link to="/sales-over-time">Vendas ao Longo do Tempo</Link></li>
-            <li><Link to="/price-comparison">Comparação de Preços MRP</Link></li>
-            <li><Link to="/weight-vs-qty">Peso vs Quantidade</Link></li>
-            <li><Link to="/top-stock">Produtos com Maior Estoque</Link></li>
-            <li><Link to="/sales-by-style-over-time">Vendas por Estilo ao Longo do Tempo</Link></li>
-            <li><Link to="/price-original-vs-final">Preço Original vs Final</Link></li>
-            <li><Link to="/sales-b2b">Vendas B2B vs Outros Canais</Link></li>
-            <li><Link to="/sales-heatmap">Mapa de Calor de Vendas</Link></li>
-            <li><Link to="/produtos-status">Porcentagem dos Status dos produtos</Link></li>
+            <li><Link to="/amazon-sales-by-state">1.Vendas por Estado (Amazon)</Link></li>
+            <li><Link to="/sales-by-category">2.Distribuição de Vendas por Categoria</Link></li>
+            <li><Link to="/sales-over-time">3.Vendas ao Longo do Tempo</Link></li>
+            <li><Link to="/price-comparison">4.Comparação de Preços MRP</Link></li>
+            <li><Link to="/top-stock">5.Produtos com Maior Estoque</Link></li>
+            <li><Link to="/sales-by-style-over-time">6.Vendas por Estilo ao Longo do Tempo</Link></li>
+            <li><Link to="/price-original-vs-final">7.Preço Original vs Final</Link></li>
+            <li><Link to="/sales-b2b">8.Vendas B2B vs Outros Canais</Link></li>
+            <li><Link to="/sales-heatmap">9.Mapa de Calor de Vendas</Link></li>
+            <li><Link to="/produtos-status">10.Porcentagem dos Status dos produtos</Link></li>
           </ul>
         </nav>
 
@@ -51,7 +49,6 @@ const App: React.FC = () => {
           <Route path="/sales-by-category" element={<SalesByCategory />} />
           <Route path="/sales-over-time" element={<SalesOverTime />} />
           <Route path="/price-comparison" element={<PriceComparison />} />
-          <Route path="/weight-vs-qty" element={<WeightVsQty />} />
           <Route path="/top-stock" element={<TopStock />} />
           <Route path="/sales-by-style-over-time" element={<SalesByStyleOverTime />} />
           <Route path="/price-original-vs-final" element={<PriceOriginalVsFinal />} />
