@@ -24,6 +24,7 @@ import SalesByStyleOverTime from './components/SalesByStyleOverTime';
 import PriceOriginalVsFinal from './components/PriceOriginalVsFinal';
 import SalesB2B from './components/SalesB2B';
 import SalesHeatmap from './components/SalesHeatmap';
+import ProdutoStatus from './components/ProdutosStatus';
 
 const App: React.FC = () => {
   return (
@@ -41,6 +42,7 @@ const App: React.FC = () => {
             <li><Link to="/price-original-vs-final">Preço Original vs Final</Link></li>
             <li><Link to="/sales-b2b">Vendas B2B vs Outros Canais</Link></li>
             <li><Link to="/sales-heatmap">Mapa de Calor de Vendas</Link></li>
+            <li><Link to="/produtos-status">Porcentagem dos Status dos produtos</Link></li>
           </ul>
         </nav>
 
@@ -55,6 +57,7 @@ const App: React.FC = () => {
           <Route path="/price-original-vs-final" element={<PriceOriginalVsFinal />} />
           <Route path="/sales-b2b" element={<SalesB2B />} />
           <Route path="/sales-heatmap" element={<SalesHeatmap />} />
+          <Route path="/produtos-status" element={<ProdutoStatus />} />
         </Routes>
       </div>
     </Router>

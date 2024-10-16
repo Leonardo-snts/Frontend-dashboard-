@@ -12,7 +12,7 @@ const SalesByStyleOverTime = () => {
 
   const dates = data.map(item => item['Date']);
   const qty = data.map(item => item['QTY']);
-  const styles = data.map(item => item['Style']);
+  // const styles = data.map(item => item['Style']);
 
   return (
     <Plot
