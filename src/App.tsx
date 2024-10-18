@@ -21,7 +21,7 @@ import PriceComparison from './components/PriceComparison';
 import TopStock from './components/TopStock';
 import SalesQtyOverTime from './components/SalesQtyOverTime';
 import PriceOriginalVsFinal from './components/PriceOriginalVsFinal';
-import SalesHeatmap from './components/SalesHeatmap';
+import HeatMap from './components/HeatMap';
 import ProdutoStatus from './components/ProdutosStatus';
 
 const App: React.FC = () => {
@@ -37,7 +37,7 @@ const App: React.FC = () => {
             <li><Link to="/top-stock">5.Produtos com Maior Estoque</Link></li>
             <li><Link to="/sales-qty-over-time">6.Vendas por Estilo ao Longo do Tempo</Link></li>
             <li><Link to="/price-original-vs-final">7.Preço Original vs Final</Link></li>
-            <li><Link to="/sales-heatmap">8.Mapa de Calor de Vendas</Link></li>
+            <li><Link to="/heat-map">8.Mapa de Calor de Vendas</Link></li>
             <li><Link to="/produtos-status">9.Porcentagem dos Status dos produtos</Link></li>
           </ul>
         </nav>
@@ -50,7 +50,7 @@ const App: React.FC = () => {
           <Route path="/top-stock" element={<TopStock />} />
           <Route path="/sales-qty-over-time" element={<SalesQtyOverTime />} />
           <Route path="/price-original-vs-final" element={<PriceOriginalVsFinal />} />
-          <Route path="/sales-heatmap" element={<SalesHeatmap />} />
+          <Route path="/heat-map" element={<HeatMap />} />
           <Route path="/produtos-status" element={<ProdutoStatus />} />
         </Routes>
       </div>
