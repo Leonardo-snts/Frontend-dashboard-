@@ -11,3 +11,51 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-page form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.dashboard {
+  display: flex;
+}
+
+.side-nav {
+  width: 200px;
+  background-color: #0a7cee;
+  color: white;
+  height: 100vh;
+}
+
+.side-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-nav ul li {
+  padding: 15px;
+}
+
+.side-nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
