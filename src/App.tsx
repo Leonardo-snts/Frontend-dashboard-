@@ -20,6 +20,7 @@ import Grafico17 from './components/Dashboard/Graficos/Grafico17';
 import Grafico18 from './components/Dashboard/Graficos/Grafico18';
 import Grafico19 from './components/Dashboard/Graficos/Grafico19';
 import Grafico20 from './components/Dashboard/Graficos/Grafico20';
+import Grafico21 from './components/Dashboard/Graficos/Grafico21';
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
       <Grafico18 />
       <Grafico19 />
       <Grafico20 />
-      
+      <Grafico21 />
     </div>
   );
 }
