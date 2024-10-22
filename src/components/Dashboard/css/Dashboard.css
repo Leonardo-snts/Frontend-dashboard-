@@ -1,0 +1,32 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .main-content {
+    margin-left: 250px; /* Largura da side-nav */
+    padding: 20px;
+    width: 100%;
+    overflow-y: auto;
+  }
+  
+  section {
+    margin-bottom: 50px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .main-content {
+      margin-left: 0;
+    }
+    .sidenav {
+      width: 100%;
+      position: relative;
+    }
+  }
+  

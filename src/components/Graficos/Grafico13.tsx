@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 
-const Grafico20 = () => {
+const Grafico13 = () => {
   const [graficoData, setGraficoData] = useState<any>(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/grafico20') // Backend API
+    fetch('http://localhost:5000/api/grafico13') // Backend API
       .then(response => response.json())
       .then(data => {
         setGraficoData(JSON.parse(data));
@@ -27,4 +27,4 @@ const Grafico20 = () => {
   );
 };
 
-export default Grafico20;
+export default Grafico13;
