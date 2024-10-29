@@ -1,32 +1,37 @@
-import React from 'react';
-import SideNav from '../Dashboard/SideNav';
-import Cliente from '../seções/Cliente';
-import Vendas from '../seções/Vendas';
-import Produtos from '../seções/Produtos';
-import Mapa from '../seções/Mapa';
+import React, { useState } from 'react';
+import SideNav from './SideNav';
+import ClienteSection from '../seções/ClienteSection';
+import VendasSection from '../seções/VendasSection';
+import ProdutosSection from '../seções/ProdutosSection';
+import MapaSection from '../seções/MapaSection';
 import './css/Dashboard.css';
 
 const Dashboard = () => {
+  // Estado para controlar a seção ativa
+  const [activeSection, setActiveSection] = useState('cliente');
+
+  // Função para renderizar a seção ativa
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'cliente':
+        return <ClienteSection />;
+      case 'vendas':
+        return <VendasSection />;
+      case 'produtos':
+        return <ProdutosSection />;
+      case 'mapa':
+        return <MapaSection />;
+      default:
+        return <ClienteSection />;
+    }
+  };
+
   return (
     <div className="dashboard-container">
-      <SideNav />
+      <SideNav setActiveSection={setActiveSection} />
       <div className="main-content">
-        <section id="cliente">
-          <h2>Cliente</h2>
-          <Cliente />
-        </section>
-        <section id="vendas">
-          <h2>Vendas</h2>
-          <Vendas />
-        </section>
-        <section id="produtos">
-          <h2>Produtos</h2>
-          <Produtos />
-        </section>
-        <section id="mapa">
-          <h2>Mapa</h2>
-          <Mapa />
-        </section>
+        <h2>{activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}</h2>
+        {renderSection()}
       </div>
     </div>
   );

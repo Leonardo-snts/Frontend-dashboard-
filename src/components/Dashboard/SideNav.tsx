@@ -1,13 +1,17 @@
 import React from 'react';
 import './css/SIdeNav.css';
 
-const SideNav = () => {
+interface SideNavProps {
+  setActiveSection: (section: string) => void;
+}
+
+const SideNav: React.FC<SideNavProps> = ({ setActiveSection }) => {
   return (
     <div className="sidenav">
-      <a href="#cliente">Cliente</a>
-      <a href="#vendas">Vendas</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#mapa">Mapa</a>
+      <button onClick={() => setActiveSection('cliente')}>Cliente</button>
+      <button onClick={() => setActiveSection('vendas')}>Vendas</button>
+      <button onClick={() => setActiveSection('produtos')}>Produtos</button>
+      <button onClick={() => setActiveSection('mapa')}>Mapa</button>
     </div>
   );
 };
