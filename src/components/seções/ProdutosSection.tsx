@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import Plot from 'react-plotly.js';
+import Grafico1 from "../Graficos/Grafico1";
+import Grafico14 from "../Graficos/Grafico14";
+import Grafico15 from "../Graficos/Grafico15";
+import Grafico16 from "../Graficos/Grafico16";
+import Grafico17 from "../Graficos/Grafico17";
+import Grafico18 from "../Graficos/Grafico18";
+import Grafico19 from "../Graficos/Grafico19";
+
 
 const Produtos = () => {
-  const [data, setData] = useState<any>(null);
-
-  useEffect(() => {
-    fetch('http://localhost:5000/graficoProdutos')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error('Erro ao carregar gráfico de Produtos:', error));
-  }, []);
-
   return (
     <div>
-      {data ? (
-        <Plot data={data.data} layout={data.layout} />
-      ) : (
-        <p>Carregando gráfico de Produtos...</p>
-      )}
+      <Grafico1 />
+      <Grafico14 />
+      <Grafico15 />
+      <Grafico16 />
+      <Grafico17 />
+      <Grafico18 />
+      <Grafico19 />
     </div>
   );
 };

@@ -5,7 +5,7 @@ const Grafico12 = () => {
   const [graficoData, setGraficoData] = useState<any>(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/rafico12') // Backend API
+    fetch('http://localhost:5000/api/grafico12') // Backend API
       .then(response => response.json())
       .then(data => {
         setGraficoData(JSON.parse(data));
