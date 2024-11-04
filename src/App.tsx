@@ -2,13 +2,12 @@ import React from 'react';
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <h1>Dashboard de Vendas</h1>
       <Dashboard />
     </div>
   );
-}
+};
 
 export default App;
