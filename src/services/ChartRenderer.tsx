@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Plot from 'react-plotly.js';
-
-type ChartConfig = {
-  id: string;
-  endpoint: string;
-  title: string;
-  type: 'bar' | 'pie' | 'line' | 'scatter' | 'histogram';
-  xKey: string;
-  yKey: string;
-  status: string;
-};
+import { ChartConfig } from './chartConfig';
 
 type ChartData = Record<string, any>[];
 
@@ -23,67 +14,64 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
 
   useEffect(() => {
     axios.get(config.endpoint)
-      .then((response) => setData(response.data))
+      .then((response) => {
+        console.log("Dados recebidos:", response.data);
+        setData(response.data);
+      })
       .catch((error) => console.error("Erro ao carregar os dados:", error));
   }, [config.endpoint]);
 
   const getDataForChart = () => {
-    
+    if (!Array.isArray(data)) {
+      console.error("Os dados não são um array:", data);
+      return []; // Retorna um array vazio se data não for um array
+    }
+
+    // Dados padrão para o gráfico
+    const defaultData = [
+      {
+        x: data.map(item => item[config.xKey]),
+        y: data.map(item => item[config.yKey]),
+        type: config.type,
+      }
+    ];
+
     if (config.type === 'histogram') {
       const statuses = ["cancelado", "enviado", "pendente"];
-      
+
       return statuses.map(status => ({
-        x: data
-          .filter(item => item[config.status] === status) // Filtra pelo status atual
-          .map(item => item[config.xKey]), // Extrai o nome da loja
-        y: data
-          .filter(item => item[config.status] === status) // Filtra pelo status atual
-          .map(item => item[config.yKey]), // Extrai a contagem
-        type: 'bar', // 'bar' para exibir barras
-        name: status, // Nome da barra como o status de entrega
+        x: data.filter(item => item[config.status] === status).map(item => item[config.xKey]),
+        y: data.filter(item => item[config.status] === status).map(item => item[config.yKey]),
+        type: 'bar',
+        name: status,
       }));
     } else if (config.type === 'pie') {
-      return [
-        {
-          labels: data.map(item => item[config.xKey]),
-          values: data.map(item => item[config.yKey]),
-          type: 'pie',
-        }
-      ];
-    }else if (config.type === 'scatter') {
+      return [{
+        labels: data.map(item => item[config.xKey]),
+        values: data.map(item => item[config.yKey]),
+        type: 'pie',
+      }];
+    } else if (config.type === 'scatter') {
       const products = ["cozinha", "casa", "ferramentas", "eletronico", "roupa"];
-      
+
       return products.map(status => ({
-        x: data
-          .filter(item => item[config.status] === status)
-          .map(item => item[config.xKey]),
-        y: data
-          .filter(item => item[config.status] === status)
-          .map(item => item[config.yKey]),
+        x: data.filter(item => item[config.status] === status).map(item => item[config.xKey]),
+        y: data.filter(item => item[config.status] === status).map(item => item[config.yKey]),
         type: 'scatter',
         mode: 'markers+text',
         name: status,
       }));
     } else {
-      return [
-        {
-          x: data.map(item => item[config.xKey]),
-          y: data.map(item => item[config.yKey]),
-          type: config.type,
-          marker: {
-            colors: data.map(item => item[config.status])
-          }
-        }
-      ];
+      return defaultData;
     }
   };
 
   return (
     <div>
-      <h2>{config.title}</h2>
       <Plot
         data={getDataForChart()}
         layout={{
+          title: config.title,
           width: 600,
           height: 400,
           barmode: 'group',

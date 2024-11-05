@@ -1,4 +1,17 @@
-export const chartConfigs = [
+type ChartType = "bar" | "pie" | "heatmap" | "scatter" | "histogram" | "line";
+
+export interface ChartConfig {
+    id: string;
+    endpoint: string;
+    title: string;
+    type: ChartType; // Deve ser um dos tipos literais
+    xKey: string;
+    yKey: string;
+    zKey: string;
+    status: string;
+}
+
+export const chartConfigs: ChartConfig[] = [
   {
     id: "grafico1",
     endpoint: "http://127.0.0.1:5000/api/grafico1",
@@ -6,7 +19,8 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "tipo_do_produto",
     yKey: "contagem",
-    status: "",
+    status: "statusKey1",
+    zKey: 'quantidade',
   },
   {
     id: "grafico2",
@@ -15,7 +29,8 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "loja",
     yKey: "contagem",
-    status: "",
+    status: "statusKey2",
+    zKey: 'quantidade',
   },
   {
     id: "grafico3",
@@ -24,7 +39,8 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "tipo_do_produto",
     yKey: "valor_total_venda",
-    status: "",
+    status: "statusKey3",
+    zKey: 'quantidade',
   },
   {
     id: "grafico4",
@@ -34,6 +50,7 @@ export const chartConfigs = [
     xKey: "valor de compra",
     yKey: "valor de venda",
     status: "tipo do produto",
+    zKey: 'quantidade',
   },
   {
     id: "grafico5",
@@ -42,7 +59,8 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "loja",
     yKey: "quantidade_total",
-    status: "",
+    status: "statusKey5",
+    zKey: 'quantidade',
   },
   {
     id: "grafico6",
@@ -51,7 +69,8 @@ export const chartConfigs = [
     type: "pie" as "pie",
     xKey: "tipo_envio",
     yKey: "contagem",
-    status: "",
+    status: "statusKey6",
+    zKey: 'quantidade',
   },
   {
     id: "grafico7",
@@ -60,7 +79,8 @@ export const chartConfigs = [
     type: "histogram" as "histogram", // Alterado para 'bar' em vez de 'histogram'
     xKey: "loja que comprou",
     yKey: "contagem",
-    status: "status de entrega", // status por 'status da entrega'
+    status: "status de entrega", 
+    zKey: 'quantidade',// status por 'status da entrega'
   },
   {
     id: "grafico8",
@@ -69,7 +89,8 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "moeda",
     yKey: "quantidade_total",
-    status: "",
+    status: "statusKey8",
+    zKey: 'quantidade',
   },
   {
     id: "grafico9",
@@ -78,7 +99,8 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "moeda",
     yKey: "valor_total_venda",
-    status: "",
+    status: "statusKey9",
+    zKey: 'quantidade',
   },
   {
     id: "grafico10",
@@ -87,6 +109,107 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "loja",
     yKey: "valor",
-    status: "",
+    status: "statusKey10",
+    zKey: 'quantidade',
+  },
+  {
+    id: "grafico11",
+    endpoint: "http://127.0.0.1:5000/api/grafico11",
+    title: "Valor de Venda por Cidade",
+    type: "bar" as "bar",
+    xKey: "cidade",
+    yKey: "valor_total_venda",
+    status: "statusKey11",
+    zKey: 'quantidade',
+  },
+  {
+    id: "grafico12",
+    endpoint: "http://127.0.0.1:5000/api/grafico12",
+    title: "Média de Valor de Venda por Tipo de Produto",
+    type: "bar" as "bar",
+    xKey: "tipo_do_produto",
+    yKey: "media_valor_venda",
+    status: "statusKey12",
+    zKey: 'quantidade',
+  },
+  {
+    id: "grafico13",
+    endpoint: "http://127.0.0.1:5000/api/grafico13",
+    title: "Média de Valor de Compra por Tipo de Produto",
+    type: "bar" as "bar",
+    xKey: "tipo_do_produto",
+    yKey: "media_valor_compra",
+    status: "statusKey13",
+    zKey: 'quantidade',
+  },
+  {
+    id: "grafico14",
+    endpoint: "http://127.0.0.1:5000/api/grafico14",
+    title: "Quantidade Comprada por Mês",
+    type: "bar" as "bar",
+    xKey: "mes",
+    yKey: "quantidade_total",
+    status: "statusKey14",
+    zKey: 'quantidade',
+  },
+  {
+    id: "grafico15",
+    endpoint: "http://127.0.0.1:5000/api/grafico15",
+    title: "Distribuição dos Canais de Venda",
+    type: "pie" as "pie",
+    xKey: "canal_venda",
+    yKey: "contagem",
+    status: "statusKey15",
+    zKey: 'quantidade',
+  },
+  {
+    id: "grafico16",
+    endpoint: "http://127.0.0.1:5000/api/grafico16",
+    title: "Quantidade Comprada por Tipo de Envio",
+    type: "bar" as "bar",
+    xKey: "tipo_envio",
+    yKey: "quantidade_total",
+    status: "statusKey16",
+    zKey: 'quantidade',
+  },
+  {
+    id: "grafico17",
+    endpoint: "http://127.0.0.1:5000/api/grafico17",
+    title: "Valor Total por Status de Entrega",
+    type: "bar" as "bar",
+    xKey: "status_entrega",
+    yKey: "valor_total_venda",
+    status: "statusKey17",
+    zKey: 'quantidade',
+  },
+  {
+    id: "grafico18",
+    endpoint: "http://127.0.0.1:5000/api/grafico18",
+    title: "Quantidade de Vendas por Status de Entrega",
+    type: "bar" as "bar",
+    xKey: "status_entrega",
+    yKey: "contagem",
+    status: "statusKey18",
+    zKey: 'quantidade',
+  },
+  {
+    id: "grafico19",
+    endpoint: "http://127.0.0.1:5000/api/grafico19",
+    title: "Comparação de Valor de Venda por Canal de Venda",
+    type: "bar" as "bar",
+    xKey: "canal_venda",
+    yKey: "valor_total_venda",
+    status: "statusKey19",
+    zKey: 'quantidade',
+  },
+  {
+    id: "grafico20",
+    endpoint: "http://127.0.0.1:5000/api/grafico20",
+    title: "Valor de Venda por Estado de Envio",
+    type: "bar" as "bar",
+    xKey: "estado_envio",
+    yKey: "valor_total_venda",
+    status: "statusKey20",
+    zKey: '',
   },
 ];
