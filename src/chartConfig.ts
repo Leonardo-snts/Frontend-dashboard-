@@ -3,10 +3,10 @@ export const chartConfigs = [
     id: "grafico1",
     endpoint: "http://127.0.0.1:5000/api/grafico1",
     title: "Distribuição de Vendas por Loja",
-    type: "bar" as "bar", // Tipo de gráfico  type: 'bar' | 'pie' | 'line' | 'scatter';
+    type: "bar" as "bar",
     xKey: "tipo_do_produto",
     yKey: "contagem",
-    color: "",
+    cor: "",
   },
   {
     id: "grafico2",
@@ -15,7 +15,7 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "loja",
     yKey: "contagem",
-    color: "",
+    cor: "",
   },
   {
     id: "grafico3",
@@ -24,7 +24,7 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "tipo_do_produto",
     yKey: "valor_total_venda",
-    color: "",
+    cor: "",
   },
   {
     id: "grafico4",
@@ -33,7 +33,7 @@ export const chartConfigs = [
     type: "scatter" as "scatter",
     xKey: "valor de compra",
     yKey: "valor de venda",
-    color: "",
+    cor: "tipo do produto",
   },
   {
     id: "grafico5",
@@ -42,24 +42,42 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "loja",
     yKey: "quantidade_total",
-    color: "",
+    cor: "",
   },
   {
     id: "grafico6",
     endpoint: "http://127.0.0.1:5000/api/grafico6",
     title: "Tipos de Envio",
     type: "pie" as "pie",
-    xKey: "tipo_envio", // Define os rótulos da pizza
-    yKey: "contagem", // Define os valores da pizza
-    color: "",
+    xKey: "tipo_envio",
+    yKey: "contagem",
+    cor: "",
   },
   {
     id: "grafico7",
     endpoint: "http://127.0.0.1:5000/api/grafico7",
     title: "Status de Entrega por Loja",
-    type: "histogram" as "histogram",
-    xKey: "loja que comprou", // Define os rótulos da pizza
-    yKey: "contagem", // Define os valores da pizza
-    color: "status da entrega",
+    type: "histogram" as "histogram", // Alterado para 'bar' em vez de 'histogram'
+    xKey: "loja que comprou",
+    yKey: "contagem",
+    cor: "status de entrega", // cor por 'status da entrega'
+  },
+  {
+    id: "grafico8",
+    endpoint: "http://127.0.0.1:5000/api/grafico8",
+    title: "Quantidade Comprada por Moeda Usada",
+    type: "bar" as "bar",
+    xKey: "moeda",
+    yKey: "quantidade_total",
+    cor: "",
+  },
+  {
+    id: "grafico9",
+    endpoint: "http://127.0.0.1:5000/api/grafico9",
+    title: "Valor Total de Venda por Moeda",
+    type: "bar" as "bar",
+    xKey: "moeda",
+    yKey: "valor_total_venda",
+    cor: "",
   },
 ];
