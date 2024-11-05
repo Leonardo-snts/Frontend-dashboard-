@@ -9,7 +9,7 @@ type ChartConfig = {
   type: 'bar' | 'pie' | 'line' | 'scatter' | 'histogram';
   xKey: string;
   yKey: string;
-  cor: string;
+  status: string;
 };
 
 type ChartData = Record<string, any>[];
@@ -34,10 +34,10 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
       
       return statuses.map(status => ({
         x: data
-          .filter(item => item[config.cor] === status) // Filtra pelo status atual
+          .filter(item => item[config.status] === status) // Filtra pelo status atual
           .map(item => item[config.xKey]), // Extrai o nome da loja
         y: data
-          .filter(item => item[config.cor] === status) // Filtra pelo status atual
+          .filter(item => item[config.status] === status) // Filtra pelo status atual
           .map(item => item[config.yKey]), // Extrai a contagem
         type: 'bar', // 'bar' para exibir barras
         name: status, // Nome da barra como o status de entrega
@@ -55,10 +55,10 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
       
       return products.map(status => ({
         x: data
-          .filter(item => item[config.cor] === status)
+          .filter(item => item[config.status] === status)
           .map(item => item[config.xKey]),
         y: data
-          .filter(item => item[config.cor] === status)
+          .filter(item => item[config.status] === status)
           .map(item => item[config.yKey]),
         type: 'scatter',
         mode: 'markers+text',
@@ -71,7 +71,7 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
           y: data.map(item => item[config.yKey]),
           type: config.type,
           marker: {
-            colors: data.map(item => item[config.cor])
+            colors: data.map(item => item[config.status])
           }
         }
       ];

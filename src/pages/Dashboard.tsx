@@ -1,6 +1,6 @@
 import React from 'react';
-import { chartConfigs } from '../../chartConfig';
-import ChartRenderer from './ChartRenderer';
+import { chartConfigs } from '../services/chartConfig';
+import ChartRenderer from '../services/ChartRenderer';
 import './css/Dashboard.css'
 
 const Dashboard: React.FC = () => {

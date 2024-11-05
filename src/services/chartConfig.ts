@@ -6,7 +6,7 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "tipo_do_produto",
     yKey: "contagem",
-    cor: "",
+    status: "",
   },
   {
     id: "grafico2",
@@ -15,7 +15,7 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "loja",
     yKey: "contagem",
-    cor: "",
+    status: "",
   },
   {
     id: "grafico3",
@@ -24,7 +24,7 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "tipo_do_produto",
     yKey: "valor_total_venda",
-    cor: "",
+    status: "",
   },
   {
     id: "grafico4",
@@ -33,7 +33,7 @@ export const chartConfigs = [
     type: "scatter" as "scatter",
     xKey: "valor de compra",
     yKey: "valor de venda",
-    cor: "tipo do produto",
+    status: "tipo do produto",
   },
   {
     id: "grafico5",
@@ -42,7 +42,7 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "loja",
     yKey: "quantidade_total",
-    cor: "",
+    status: "",
   },
   {
     id: "grafico6",
@@ -51,7 +51,7 @@ export const chartConfigs = [
     type: "pie" as "pie",
     xKey: "tipo_envio",
     yKey: "contagem",
-    cor: "",
+    status: "",
   },
   {
     id: "grafico7",
@@ -60,7 +60,7 @@ export const chartConfigs = [
     type: "histogram" as "histogram", // Alterado para 'bar' em vez de 'histogram'
     xKey: "loja que comprou",
     yKey: "contagem",
-    cor: "status de entrega", // cor por 'status da entrega'
+    status: "status de entrega", // status por 'status da entrega'
   },
   {
     id: "grafico8",
@@ -69,7 +69,7 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "moeda",
     yKey: "quantidade_total",
-    cor: "",
+    status: "",
   },
   {
     id: "grafico9",
@@ -78,6 +78,15 @@ export const chartConfigs = [
     type: "bar" as "bar",
     xKey: "moeda",
     yKey: "valor_total_venda",
-    cor: "",
+    status: "",
+  },
+  {
+    id: "grafico10",
+    endpoint: "http://127.0.0.1:5000/api/grafico10",
+    title: "Comparação de Preços entre Lojas e Distribuidora",
+    type: "bar" as "bar",
+    xKey: "loja",
+    yKey: "valor",
+    status: "",
   },
 ];
