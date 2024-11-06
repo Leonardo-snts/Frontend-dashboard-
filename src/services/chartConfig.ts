@@ -7,7 +7,6 @@ export interface ChartConfig {
     type: ChartType; // Deve ser um dos tipos literais
     xKey: string;
     yKey: string;
-    zKey: string;
     status: string;
 }
 
@@ -20,7 +19,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_do_produto",
     yKey: "contagem",
     status: "statusKey1",
-    zKey: 'quantidade',
   },
   {
     id: "grafico2",
@@ -30,7 +28,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "loja",
     yKey: "contagem",
     status: "statusKey2",
-    zKey: 'quantidade',
   },
   {
     id: "grafico3",
@@ -40,7 +37,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_do_produto",
     yKey: "valor_total_venda",
     status: "statusKey3",
-    zKey: 'quantidade',
   },
   {
     id: "grafico4",
@@ -50,7 +46,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "valor de compra",
     yKey: "valor de venda",
     status: "tipo do produto",
-    zKey: 'quantidade',
   },
   {
     id: "grafico5",
@@ -60,7 +55,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "loja",
     yKey: "quantidade_total",
     status: "statusKey5",
-    zKey: 'quantidade',
   },
   {
     id: "grafico6",
@@ -70,7 +64,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_envio",
     yKey: "contagem",
     status: "statusKey6",
-    zKey: 'quantidade',
   },
   {
     id: "grafico7",
@@ -80,7 +73,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "loja que comprou",
     yKey: "contagem",
     status: "status de entrega", 
-    zKey: 'quantidade',// status por 'status da entrega'
   },
   {
     id: "grafico8",
@@ -90,7 +82,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "moeda",
     yKey: "quantidade_total",
     status: "statusKey8",
-    zKey: 'quantidade',
   },
   {
     id: "grafico9",
@@ -100,7 +91,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "moeda",
     yKey: "valor_total_venda",
     status: "statusKey9",
-    zKey: 'quantidade',
   },
   {
     id: "grafico10",
@@ -110,7 +100,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "loja",
     yKey: "valor",
     status: "statusKey10",
-    zKey: 'quantidade',
   },
   {
     id: "grafico11",
@@ -120,7 +109,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "cidade",
     yKey: "valor_total_venda",
     status: "statusKey11",
-    zKey: 'quantidade',
   },
   {
     id: "grafico12",
@@ -130,7 +118,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_do_produto",
     yKey: "media_valor_venda",
     status: "statusKey12",
-    zKey: 'quantidade',
   },
   {
     id: "grafico13",
@@ -140,7 +127,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_do_produto",
     yKey: "media_valor_compra",
     status: "statusKey13",
-    zKey: 'quantidade',
   },
   {
     id: "grafico14",
@@ -150,7 +136,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "mes",
     yKey: "quantidade_total",
     status: "statusKey14",
-    zKey: 'quantidade',
   },
   {
     id: "grafico15",
@@ -160,7 +145,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "canal_venda",
     yKey: "contagem",
     status: "statusKey15",
-    zKey: 'quantidade',
   },
   {
     id: "grafico16",
@@ -170,7 +154,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_envio",
     yKey: "quantidade_total",
     status: "statusKey16",
-    zKey: 'quantidade',
   },
   {
     id: "grafico17",
@@ -180,7 +163,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "status_entrega",
     yKey: "valor_total_venda",
     status: "statusKey17",
-    zKey: 'quantidade',
   },
   {
     id: "grafico18",
@@ -190,7 +172,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "status_entrega",
     yKey: "contagem",
     status: "statusKey18",
-    zKey: 'quantidade',
   },
   {
     id: "grafico19",
@@ -200,7 +181,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "canal_venda",
     yKey: "valor_total_venda",
     status: "statusKey19",
-    zKey: 'quantidade',
   },
   {
     id: "grafico20",
@@ -210,6 +190,5 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "estado_envio",
     yKey: "valor_total_venda",
     status: "statusKey20",
-    zKey: '',
   },
 ];

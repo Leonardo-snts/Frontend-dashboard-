@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Plot from 'react-plotly.js';
 import { ChartConfig } from './chartConfig';
+import Grafico21 from '../components/Grafico21';
 
 type ChartData = Record<string, any>[];
 
@@ -61,6 +62,11 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
         mode: 'markers+text',
         name: status,
       }));
+    } else if (config.type ==='heatmap') {
+      return [
+        <Grafico21 />
+      ]
+
     } else {
       return defaultData;
     }
