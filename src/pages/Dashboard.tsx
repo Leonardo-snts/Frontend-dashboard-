@@ -1,17 +1,39 @@
-import React from 'react';
-import { chartConfigs } from '../services/chartConfig'; // Importando as configurações dos gráficos
-import ChartRenderer from '../services/ChartRenderer'; // Importando o renderizador de gráficos
-import './css/Dashboard.css'; // Importando o CSS do Dashboard
-import Grafico21 from '../components/Grafico21';
+import React, { useState } from 'react';
+import SideNav from '../components/SideNav';
+import ClienteSection from './sections/CLienteSection';
+import VendasSection from './sections/VendasSection';
+import ProdutosSection from './sections/ProdutosSection';
+import MapaSection from './sections/MapaSection';
 
-const Dashboard: React.FC = () => {
+const Dashboard = () => {
+  // Estado para controlar a seção ativa
+  const [activeSection, setActiveSection] = useState('cliente');
+
+  // Função para renderizar a seção ativa
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'cliente':
+        return <ClienteSection />;
+      case 'vendas':
+        return <VendasSection />;
+      case 'produtos':
+        return <ProdutosSection />;
+      case 'mapa':
+        return <MapaSection />;
+      default:
+        return <ClienteSection />;
+    }
+  };
+
   return (
-    <div> {/* Adicionando uma classe para estilo */}
-      <h1>Dashboard de Vendas</h1>
-      {chartConfigs.map((config) => (
-        <ChartRenderer key={config.id} config={config} /> 
-      ))}
-      <Grafico21 /> 
+    <div className="flex h-screen bg-gray-100">
+      {/* Sidebar Navigation */}
+      <SideNav setActiveSection={setActiveSection} />
+      
+      {/* Main Content Area */}
+      <div className="flex-1 p-6 overflow-auto">
+        {renderSection()}
+      </div>
     </div>
   );
 };

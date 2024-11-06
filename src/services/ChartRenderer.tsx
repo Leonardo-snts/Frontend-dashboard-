@@ -78,7 +78,7 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
         data={getDataForChart()}
         layout={{
           title: config.title,
-          width: 600,
+          width: 400,
           height: 400,
           barmode: 'group',
           xaxis: { title: config.xKey, automargin: true },

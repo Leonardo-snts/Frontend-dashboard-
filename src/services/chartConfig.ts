@@ -11,14 +11,24 @@ export interface ChartConfig {
 }
 
 export const chartConfigs: ChartConfig[] = [
+////////////////// Seção Clientes \\\\\\\\\\\\\\\\\\\\
   {
-    id: "grafico1",
-    endpoint: "http://127.0.0.1:5000/api/grafico1",
-    title: "Distribuição de Vendas por Loja",
-    type: "bar" as "bar",
-    xKey: "tipo_do_produto",
+    id: "grafico7",
+    endpoint: "http://127.0.0.1:5000/api/grafico7",
+    title: "Status de Entrega por Loja",
+    type: "histogram" as "histogram", // Alterado para 'bar' em vez de 'histogram'
+    xKey: "loja que comprou",
     yKey: "contagem",
-    status: "statusKey1",
+    status: "status de entrega", 
+  },
+  {
+    id: "grafico6",
+    endpoint: "http://127.0.0.1:5000/api/grafico6",
+    title: "Tipos de Envio",
+    type: "pie" as "pie",
+    xKey: "tipo_envio",
+    yKey: "contagem",
+    status: "statusKey6",
   },
   {
     id: "grafico2",
@@ -28,6 +38,37 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "loja",
     yKey: "contagem",
     status: "statusKey2",
+  },
+  {
+    id: "grafico5",
+    endpoint: "http://127.0.0.1:5000/api/grafico5",
+    title: "Quantidade Comprada por Loja",
+    type: "bar" as "bar",
+    xKey: "loja",
+    yKey: "quantidade_total",
+    status: "statusKey5",
+  },
+  {
+    id: "grafico10",
+    endpoint: "http://127.0.0.1:5000/api/grafico10",
+    title: "Comparação de Preços entre Lojas e Distribuidora",
+    type: "bar" as "bar",
+    xKey: "loja",
+    yKey: "valor",
+    status: "statusKey10",
+  },
+
+
+
+/////////////////////////// Seção Vendas\\\\\\\\\\\\\\\\\\\\\\
+  {
+    id: "grafico1",
+    endpoint: "http://127.0.0.1:5000/api/grafico1",
+    title: "Distribuição de Vendas por Loja",
+    type: "bar" as "bar",
+    xKey: "tipo_do_produto",
+    yKey: "contagem",
+    status: "statusKey1",
   },
   {
     id: "grafico3",
@@ -48,33 +89,6 @@ export const chartConfigs: ChartConfig[] = [
     status: "tipo do produto",
   },
   {
-    id: "grafico5",
-    endpoint: "http://127.0.0.1:5000/api/grafico5",
-    title: "Quantidade Comprada por Loja",
-    type: "bar" as "bar",
-    xKey: "loja",
-    yKey: "quantidade_total",
-    status: "statusKey5",
-  },
-  {
-    id: "grafico6",
-    endpoint: "http://127.0.0.1:5000/api/grafico6",
-    title: "Tipos de Envio",
-    type: "pie" as "pie",
-    xKey: "tipo_envio",
-    yKey: "contagem",
-    status: "statusKey6",
-  },
-  {
-    id: "grafico7",
-    endpoint: "http://127.0.0.1:5000/api/grafico7",
-    title: "Status de Entrega por Loja",
-    type: "histogram" as "histogram", // Alterado para 'bar' em vez de 'histogram'
-    xKey: "loja que comprou",
-    yKey: "contagem",
-    status: "status de entrega", 
-  },
-  {
     id: "grafico8",
     endpoint: "http://127.0.0.1:5000/api/grafico8",
     title: "Quantidade Comprada por Moeda Usada",
@@ -91,15 +105,6 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "moeda",
     yKey: "valor_total_venda",
     status: "statusKey9",
-  },
-  {
-    id: "grafico10",
-    endpoint: "http://127.0.0.1:5000/api/grafico10",
-    title: "Comparação de Preços entre Lojas e Distribuidora",
-    type: "bar" as "bar",
-    xKey: "loja",
-    yKey: "valor",
-    status: "statusKey10",
   },
   {
     id: "grafico11",
