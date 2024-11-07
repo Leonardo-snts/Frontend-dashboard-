@@ -58,18 +58,7 @@ export const chartConfigs: ChartConfig[] = [
     status: "statusKey10",
   },
 
-
-
 /////////////////////////// Seção Vendas\\\\\\\\\\\\\\\\\\\\\\
-  {
-    id: "grafico1",
-    endpoint: "http://127.0.0.1:5000/api/grafico1",
-    title: "Distribuição de Vendas por Loja",
-    type: "bar" as "bar",
-    xKey: "tipo_do_produto",
-    yKey: "contagem",
-    status: "statusKey1",
-  },
   {
     id: "grafico3",
     endpoint: "http://127.0.0.1:5000/api/grafico3",
@@ -107,15 +96,6 @@ export const chartConfigs: ChartConfig[] = [
     status: "statusKey9",
   },
   {
-    id: "grafico11",
-    endpoint: "http://127.0.0.1:5000/api/grafico11",
-    title: "Valor de Venda por Cidade",
-    type: "bar" as "bar",
-    xKey: "cidade",
-    yKey: "valor_total_venda",
-    status: "statusKey11",
-  },
-  {
     id: "grafico12",
     endpoint: "http://127.0.0.1:5000/api/grafico12",
     title: "Média de Valor de Venda por Tipo de Produto",
@@ -132,6 +112,17 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_do_produto",
     yKey: "media_valor_compra",
     status: "statusKey13",
+  },
+
+  ////////////////// Seção Produtos \\\\\\\\\\\\\\\\\\\\
+  {
+    id: "grafico1",
+    endpoint: "http://127.0.0.1:5000/api/grafico1",
+    title: "Distribuição de Vendas por Loja",
+    type: "bar" as "bar",
+    xKey: "tipo_do_produto",
+    yKey: "contagem",
+    status: "statusKey1",
   },
   {
     id: "grafico14",
@@ -186,6 +177,17 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "canal_venda",
     yKey: "valor_total_venda",
     status: "statusKey19",
+  },
+
+  ////////////////// Seção Mapa \\\\\\\\\\\\\\\\\\\\
+  {
+    id: "grafico11",
+    endpoint: "http://127.0.0.1:5000/api/grafico11",
+    title: "Valor de Venda por Cidade",
+    type: "bar" as "bar",
+    xKey: "cidade",
+    yKey: "valor_total_venda",
+    status: "statusKey11",
   },
   {
     id: "grafico20",

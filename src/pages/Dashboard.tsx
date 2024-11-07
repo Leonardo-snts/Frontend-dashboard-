@@ -6,10 +6,8 @@ import ProdutosSection from './sections/ProdutosSection';
 import MapaSection from './sections/MapaSection';
 
 const Dashboard = () => {
-  // Estado para controlar a seção ativa
   const [activeSection, setActiveSection] = useState('cliente');
 
-  // Função para renderizar a seção ativa
   const renderSection = () => {
     switch (activeSection) {
       case 'cliente':
@@ -26,13 +24,12 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      {/* Sidebar Navigation */}
+    <div className="flex h-screen bg-gray-50">
       <SideNav setActiveSection={setActiveSection} />
-      
-      {/* Main Content Area */}
-      <div className="flex-1 p-6 overflow-auto">
-        {renderSection()}
+      <div className="flex-1 p-6 overflow-y-auto">
+        <div className="p-4 bg-white rounded-lg shadow-lg">
+          {renderSection()}
+        </div>
       </div>
     </div>
   );

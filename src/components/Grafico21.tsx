@@ -22,7 +22,6 @@ const Grafico21: React.FC = () => {
     const [viewMode, setViewMode] = useState<'cities' | 'countries'>('cities');
 
     useEffect(() => {
-        // Fetch sales data from the Flask API
         axios.get('http://127.0.0.1:5000/api/grafico21')
             .then((response) => {
                 setCityData(response.data.cities);
@@ -48,7 +47,7 @@ const Grafico21: React.FC = () => {
         }
     }] : [{
         type: 'choropleth',
-        locationmode: 'country names', // Reconhece o país pelo nome
+        locationmode: 'country names',
         locations: countryData.map(d => d.country),
         z: countryData.map(d => d['quantidade comprada']),
         text: countryData.map(d => `${d.country}: ${d['quantidade comprada']} vendas`),
@@ -57,16 +56,25 @@ const Grafico21: React.FC = () => {
     }];
 
     return (
-        <div>
-            <div style={{ marginBottom: '10px' }}>
-                <button onClick={() => setViewMode('cities')}>Visualizar por Cidades</button>
-                <button onClick={() => setViewMode('countries')}>Visualizar por Países</button>
+        <div className="p-4 bg-white rounded-lg shadow-md">
+            <div className="flex mb-4 space-x-4">
+                <button 
+                    onClick={() => setViewMode('cities')} 
+                    className={`px-4 py-2 rounded-lg text-white ${viewMode === 'cities' ? 'bg-blue-500' : 'bg-gray-400'}`}
+                >
+                    Visualizar por Cidades
+                </button>
+                <button 
+                    onClick={() => setViewMode('countries')} 
+                    className={`px-4 py-2 rounded-lg text-white ${viewMode === 'countries' ? 'bg-blue-500' : 'bg-gray-400'}`}
+                >
+                    Visualizar por Países
+                </button>
             </div>
             <Plot
                 data={data}
                 layout={{
                     title: 'Mapa de Calor de Vendas',
-                    map: { style: "outdoors", zoom: 0.7 },
                     geo: {
                         scope: 'world',
                         showland: true,
@@ -77,6 +85,7 @@ const Grafico21: React.FC = () => {
                     }
                 }}
                 config={{ responsive: true }}
+                className="w-full h-[500px]"
             />
         </div>
     );
