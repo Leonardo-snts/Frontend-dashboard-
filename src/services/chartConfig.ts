@@ -12,6 +12,7 @@ export interface ChartConfig {
 
 export const chartConfigs: ChartConfig[] = [
 ////////////////// Seção Clientes \\\\\\\\\\\\\\\\\\\\
+
   {
     id: "grafico7",
     endpoint: "http://127.0.0.1:5000/api/grafico7",

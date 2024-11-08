@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Plot from 'react-plotly.js';
 import { ChartConfig } from './chartConfig';
-import Grafico21 from '../components/Grafico21';
 
 type ChartData = Record<string, any>[];
 
@@ -28,7 +27,6 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
       return []; // Retorna um array vazio se data não for um array
     }
 
-    // Dados padrão para o gráfico
     const defaultData = [
       {
         x: data.map(item => item[config.xKey]),
@@ -39,7 +37,6 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
 
     if (config.type === 'histogram') {
       const statuses = ["cancelado", "enviado", "pendente"];
-
       return statuses.map(status => ({
         x: data.filter(item => item[config.status] === status).map(item => item[config.xKey]),
         y: data.filter(item => item[config.status] === status).map(item => item[config.yKey]),
@@ -54,7 +51,6 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
       }];
     } else if (config.type === 'scatter') {
       const products = ["cozinha", "casa", "ferramentas", "eletronico", "roupa"];
-
       return products.map(status => ({
         x: data.filter(item => item[config.status] === status).map(item => item[config.xKey]),
         y: data.filter(item => item[config.status] === status).map(item => item[config.yKey]),
@@ -62,28 +58,40 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
         mode: 'markers+text',
         name: status,
       }));
-    } else if (config.type ==='heatmap') {
-      return [
-        <Grafico21 />
-      ]
-
     } else {
       return defaultData;
     }
   };
 
   return (
-    <div>
+    <div className="w-full p-4 transition duration-300 bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl sm:p-6">
       <Plot
         data={getDataForChart()}
         layout={{
-          title: config.title,
-          width: 400,
-          height: 400,
-          barmode: 'group',
-          xaxis: { title: config.xKey, automargin: true },
-          yaxis: { title: config.yKey, automargin: true },
+          title: {
+            text: config.title,
+            font: { size: 18, color: "#374151" }, // Ajuste o título
+            x: 0.5, // Centraliza o título
+          },
+          autosize: true,
+          paper_bgcolor: "rgba(0,0,0,0)", // Fundo transparente
+          plot_bgcolor: "rgba(0,0,0,0)", // Fundo do gráfico transparente
+          barmode: "group",
+          margin: { l: 40, r: 20, t: 50, b: 40 }, // Ajuste de margens
+          xaxis: {
+            title: config.xKey,
+            titlefont: { size: 14, color: "#6B7280" },
+            tickfont: { size: 12, color: "#6B7280" },
+          },
+          yaxis: {
+            title: config.yKey,
+            titlefont: { size: 14, color: "#6B7280" },
+            tickfont: { size: 12, color: "#6B7280" },
+          },
         }}
+        useResizeHandler
+        style={{ width: "400px", height: "300px" }}
+        className="h-[300px] sm:h-[400px] md:h-[500px]"
       />
     </div>
   );
