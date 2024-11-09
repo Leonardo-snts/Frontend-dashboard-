@@ -1,17 +1,18 @@
 type ChartType = "bar" | "pie" | "heatmap" | "scatter" | "histogram" | "line";
 
 export interface ChartConfig {
-    id: string;
-    endpoint: string;
-    title: string;
-    type: ChartType; // Deve ser um dos tipos literais
-    xKey: string;
-    yKey: string;
-    status: string;
+  id: string;
+  endpoint: string;
+  title: string;
+  type: ChartType; // Deve ser um dos tipos literais
+  xKey: string;
+  yKey: string;
+  status: string;
+  layout: object;
 }
 
 export const chartConfigs: ChartConfig[] = [
-////////////////// Seção Clientes \\\\\\\\\\\\\\\\\\\\
+  ////////////////// Seção Clientes \\\\\\\\\\\\\\\\\\\\
 
   {
     id: "grafico7",
@@ -20,7 +21,12 @@ export const chartConfigs: ChartConfig[] = [
     type: "histogram" as "histogram", // Alterado para 'bar' em vez de 'histogram'
     xKey: "loja que comprou",
     yKey: "contagem",
-    status: "status de entrega", 
+    status: "status de entrega",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico6",
@@ -30,6 +36,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_envio",
     yKey: "contagem",
     status: "statusKey6",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico2",
@@ -39,6 +50,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "loja",
     yKey: "contagem",
     status: "statusKey2",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico5",
@@ -48,6 +64,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "loja",
     yKey: "quantidade_total",
     status: "statusKey5",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico10",
@@ -57,9 +78,14 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "loja",
     yKey: "valor",
     status: "statusKey10",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
 
-/////////////////////////// Seção Vendas\\\\\\\\\\\\\\\\\\\\\\
+  ///////////////////////// Seção Vendas\\\\\\\\\\\\\\\\\\\\\\
   {
     id: "grafico3",
     endpoint: "http://127.0.0.1:5000/api/grafico3",
@@ -68,6 +94,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_do_produto",
     yKey: "valor_total_venda",
     status: "statusKey3",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico4",
@@ -77,6 +108,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "valor de compra",
     yKey: "valor de venda",
     status: "tipo do produto",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico8",
@@ -86,6 +122,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "moeda",
     yKey: "quantidade_total",
     status: "statusKey8",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico9",
@@ -95,6 +136,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "moeda",
     yKey: "valor_total_venda",
     status: "statusKey9",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico12",
@@ -104,6 +150,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_do_produto",
     yKey: "media_valor_venda",
     status: "statusKey12",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico13",
@@ -113,6 +164,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_do_produto",
     yKey: "media_valor_compra",
     status: "statusKey13",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
 
   ////////////////// Seção Produtos \\\\\\\\\\\\\\\\\\\\
@@ -124,6 +180,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_do_produto",
     yKey: "contagem",
     status: "statusKey1",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico14",
@@ -133,6 +194,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "mes",
     yKey: "quantidade_total",
     status: "statusKey14",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico15",
@@ -142,6 +208,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "canal_venda",
     yKey: "contagem",
     status: "statusKey15",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico16",
@@ -151,6 +222,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "tipo_envio",
     yKey: "quantidade_total",
     status: "statusKey16",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico17",
@@ -160,6 +236,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "status_entrega",
     yKey: "valor_total_venda",
     status: "statusKey17",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico18",
@@ -169,6 +250,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "status_entrega",
     yKey: "contagem",
     status: "statusKey18",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico19",
@@ -178,6 +264,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "canal_venda",
     yKey: "valor_total_venda",
     status: "statusKey19",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
 
   ////////////////// Seção Mapa \\\\\\\\\\\\\\\\\\\\
@@ -189,6 +280,11 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "cidade",
     yKey: "valor_total_venda",
     status: "statusKey11",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
   {
     id: "grafico20",
@@ -198,5 +294,10 @@ export const chartConfigs: ChartConfig[] = [
     xKey: "estado_envio",
     yKey: "valor_total_venda",
     status: "statusKey20",
+    layout: {
+      width: 350, // Defina a largura desejada
+      height: 350, // Defina a altura desejada
+      margin: { l: 50, r: 50, t: 50, b: 50 }, // Margens
+    },
   },
 ];

@@ -64,20 +64,19 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
   };
 
   return (
-    <div className="w-full p-4 transition duration-300 bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl sm:p-6">
       <Plot
         data={getDataForChart()}
         layout={{
+          ...config.layout,
           title: {
             text: config.title,
             font: { size: 18, color: "#374151" }, // Ajuste o título
             x: 0.5, // Centraliza o título
           },
-          autosize: true,
+          // autosize: true,
           paper_bgcolor: "rgba(0,0,0,0)", // Fundo transparente
           plot_bgcolor: "rgba(0,0,0,0)", // Fundo do gráfico transparente
           barmode: "group",
-          margin: { l: 40, r: 20, t: 50, b: 40 }, // Ajuste de margens
           xaxis: {
             title: config.xKey,
             titlefont: { size: 14, color: "#6B7280" },
@@ -88,12 +87,14 @@ const ChartRenderer: React.FC<ChartProps> = ({ config }) => {
             titlefont: { size: 14, color: "#6B7280" },
             tickfont: { size: 12, color: "#6B7280" },
           },
+          legend: {
+            font: { size: 12, color: "#0000000" },
+            orientation: "h",  // Define a orientação horizontal
+            x: 0.3,              // Posiciona a legenda no eixo X
+            y: -0.2            // Posiciona a legenda abaixo do gráfico
+          },
         }}
-        useResizeHandler
-        style={{ width: "400px", height: "300px" }}
-        className="h-[300px] sm:h-[400px] md:h-[500px]"
       />
-    </div>
   );
 };
 

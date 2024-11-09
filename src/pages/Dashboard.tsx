@@ -24,12 +24,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-gray-400">
       <SideNav setActiveSection={setActiveSection} />
-      <div className="flex-1 p-6 overflow-y-auto">
-        <div className="p-4 bg-white rounded-lg shadow-lg">
+      <div className="flex-1 p-6">
           {renderSection()}
-        </div>
       </div>
     </div>
   );

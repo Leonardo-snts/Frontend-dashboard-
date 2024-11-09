@@ -21,7 +21,7 @@ const MapaSection: React.FC = () => {
           ))}
       </div>
       <div className="mt-8">
-        <Grafico21 /> className="w-10 p-4 transition duration-300 border-gray-600 rounded-lg shadow-md  bg-red-50 bg-red hover:shadow-lg"
+        <Grafico21 />
       </div>
     </div>
   );
